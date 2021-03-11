@@ -27,3 +27,16 @@ const restaurant = {
     },
   },
 };
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[0];
+const c = arr[0];
+
+const [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
+
+// , can skip array varriables
+const [first, , second] = restaurant.categories;
+console.log(first, second);
