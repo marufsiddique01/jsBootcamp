@@ -59,3 +59,7 @@ console.log(restaurant.order(2, 0));
 
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
+
+//nested array destructuring
+
+const nested = [2, 4, [5, 6]];
