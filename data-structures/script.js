@@ -11,6 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -37,6 +40,22 @@ const [x, y, z] = arr;
 console.log(x, y, z);
 console.log(arr);
 
+//destructing arrays
 // , can skip array varriables
-const [first, , second] = restaurant.categories;
-console.log(first, second);
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+//> manual method>>>>>>>>>>>>>
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+//JS Method
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+console.log(restaurant.order(2, 0));
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
