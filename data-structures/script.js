@@ -31,35 +31,59 @@ const restaurant = {
   },
 };
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[0];
-const c = arr[0];
+//Destructing objects
+//two ways of doing this>>
 
-const [x, y, z] = arr;
-console.log(x, y, z);
-console.log(arr);
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
 
-//destructing arrays
-// , can skip array varriables
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
 
-//> manual method>>>>>>>>>>>>>
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+console.log(restaurantName, hours, tags);
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[0];
+// const c = arr[0];
+
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+// console.log(arr);
+
+// //destructing arrays
+// // , can skip array varriables
+// let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
 
-//JS Method
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// //> manual method>>>>>>>>>>>>>
+// // const temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
 
-console.log(restaurant.order(2, 0));
+// //JS Method
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// console.log(restaurant.order(2, 0));
 
-//nested array destructuring
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
 
-const nested = [2, 4, [5, 6]];
+// //nested array destructuring
+
+// const nested = [2, 4, [5, 6]];
+// // const [i, , j] = nested;
+// // console.log(i, j);
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// //default values
+
+// const [p, q, r] = [8, 9];
+// console.log(p, q, r);
