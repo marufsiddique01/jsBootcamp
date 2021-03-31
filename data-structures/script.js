@@ -93,6 +93,8 @@ const badNewArr = [1, 2, arr1[1], arr1[2], arr1[2]];
 
 console.log(badNewArr);
 
+//packed and unpacked
+
 //spread operator
 
 const newGoodArr = [1, 2, ...arr1];
