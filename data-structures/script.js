@@ -88,51 +88,86 @@ console.log(restaurantName, hours, tags);
 // const [p, q, r] = [8, 9];
 // console.log(p, q, r);
 
-const arr1 = [7, 8, 9];
-const badNewArr = [1, 2, arr1[1], arr1[2], arr1[2]];
+// const arr1 = [7, 8, 9];
+// const badNewArr = [1, 2, arr1[1], arr1[2], arr1[2]];
 
-console.log(badNewArr);
+// console.log(badNewArr);
 
-//packed and unpacked
+// //packed and unpacked
 
-//spread operator
+// //spread operator
 
-const newGoodArr = [1, 2, ...arr1];
-console.log(newGoodArr);
+// const newGoodArr = [1, 2, ...arr1];
+// console.log(newGoodArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-//spread >> the right side of elements
+// //spread >> the right side of elements
 
-//rest patterns and operations
+// //rest patterns and operations
 
-const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
-console.log(a, b, others);
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, others);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
 
-console.log(pizza, risotto, otherFood);
+// console.log(pizza, risotto, otherFood);
 
-//1 ) objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// //1 ) objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-//2) functions
+// //2) functions
 
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
 
-add(2, 3);
-add(5, 3, 7, 2);
+// add(2, 3);
+// add(5, 3, 7, 2);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
+
+// short circuiting , and or operator
+
+//|| or , && and
+console.log('----- OR -----');
+//use any data type, return any data type, short-circuiting
+console.log(3 || 'Pipo');
+
+console.log('' || 'Pipo');
+console.log(true || 1);
+console.log(undefined || null);
+
+//example >>
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('----- AND -----');
+
+console.log(3 && 'Pipo');
+console.log('' && 'Pipo');
+console.log(true && 1);
+console.log(undefined && null);
+
+// nulish coalescing operator (??)
+console.log('----- nulish coalescing operator -----');
+
+console.log(3 ?? 'Pipo');
+console.log('' ?? 'Pipo');
+console.log(true ?? 1);
+console.log(undefined ?? null);
