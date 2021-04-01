@@ -251,3 +251,18 @@ printGoals('Davies', 'Muller', 'Lewandowski');
 
 team1 < team2 && console.log(`Team 1 is more likely to win`);
 team1 > team2 && console.log(`Team 2 is more likely to win`);
+
+//_____________>
+//Looping arrays
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+//for-of loop >>
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  //console.log(item);
+  //console.log(`${item[0] + 1}: ${item[1]}`); //old technique
+  console.log(`${i + 1}: ${el}`); //new technique > destracting
+}
+
+//console.log(menu.entries);
