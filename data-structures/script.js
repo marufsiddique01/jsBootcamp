@@ -82,6 +82,26 @@ const restaurant = {
 };
 
 console.log(restaurant);
+
+//optional chaining(?.)
+
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+
+// with optional chaining
+
+console.log(restaurant.openingHours.fri?.open);
+
+//example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
 //Destructing objects
 //two ways of doing this>>
 
