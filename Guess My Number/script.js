@@ -98,7 +98,7 @@ function lost() {}
 document.querySelector('.again').addEventListener('click', reset);
 
 function reset() {
-  secretNumber = Math.trunc(Math.random() * 20);
+  secretNumber = Math.trunc(Math.random() * 100);
   console.log(secretNumber);
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
