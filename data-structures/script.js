@@ -376,3 +376,36 @@ for (const [team, odd] of Object.entries(game.odds)) {
 // Odd of victory Bayern Munich: 1.33
 // Odd of draw: 3.25
 // Odd of victory Borrussia Dortmund: 6.5
+
+//Sets
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Hot Dog',
+  'Risotto',
+  'Pizza',
+]);
+
+console.log(orderSet);
+
+console.log(new Set('Jonas'));
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('bread'));
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+console.log(orderSet);
+
+//retrive values from set
+//-no need to getting datas out of set
+
+for (const order of orderSet) console.log(order);
+
+//turning an array to set
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
