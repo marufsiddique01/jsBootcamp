@@ -409,3 +409,31 @@ for (const order of orderSet) console.log(order);
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 const staffUnique = [...new Set(staff)];
 console.log(staffUnique);
+
+//Maps
+
+const rest = new Map();
+rest.set('name', 'Pipo Fanda');
+rest.set(1, 'Firenze, Itaty');
+console.log(rest.set(2, 'Dhaka, BD'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(false));
+
+const time = 1;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest);
+rest.delete(2);
+console.log(rest);
+
+console.log(rest.size);
+//rest.clear;
+console.log(rest);
