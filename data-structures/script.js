@@ -437,3 +437,36 @@ console.log(rest);
 console.log(rest.size);
 //rest.clear;
 console.log(rest);
+
+//Map iteration
+
+const question = new Map([
+  ['question', 'what is the best programming langulage?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['Correct', 3],
+  [true, 'Correct 👏'],
+  [false, 'Try again! 🤦‍♀️'],
+]);
+
+console.log(question);
+
+//convert object to maps
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+
+console.log(hoursMap);
+
+for (const [key, value] of question) {
+  if (typeof key == 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your Answer'));
+console.log(answer);
+
+const check = question.get('Correct') === answer;
+console.log(check);
+console.log(question.get(check));
+
+//conver map to array
