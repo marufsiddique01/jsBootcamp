@@ -116,6 +116,14 @@ const {
 
 console.log(restaurantName, hours, tags);
 
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+console.log(`we are open on ${properties.length}`);
+
+for (const day of properties) {
+  console.log(day);
+}
 //>>>>>>>>>>>>>>>>>>>>>>>>>
 // const arr = [2, 3, 4];
 // const a = arr[0];
@@ -326,16 +334,45 @@ team1 > team2 && console.log(`Team 2 is more likely to win`);
 //_____________>
 //Looping arrays
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-//for-of loop >>
-for (const item of menu) console.log(item);
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// //for-of loop >>
+// for (const item of menu) console.log(item);
 
-for (const [i, el] of menu.entries()) {
-  //console.log(item);
-  //console.log(`${item[0] + 1}: ${item[1]}`); //old technique
-  console.log(`${i + 1}: ${el}`); //new technique > destracting
-}
+// for (const [i, el] of menu.entries()) {
+//   //console.log(item);
+//   //console.log(`${item[0] + 1}: ${item[1]}`); //old technique
+//   console.log(`${i + 1}: ${el}`); //new technique > destracting
+// }
 
 //console.log(menu.entries);
 
 //enhanced object literals
+
+//Challenge #2
+
+for (const goals in game.scored) {
+  console.log(`Goal ${Number(goals) + 1}: ${game.scored[goals]}`);
+}
+
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+
+const odds = Object.values(game.odds);
+let avg = 0;
+for (const odd of odds) avg += odd;
+avg /= odds.length;
+console.log(avg);
+
+for (const odd in game.odds) {
+  console.log(`Odd of ${odd}: ${game.odds[odd]}`);
+}
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
