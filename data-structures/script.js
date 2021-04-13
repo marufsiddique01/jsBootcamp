@@ -500,3 +500,124 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'First' : 'Second';
   console.log(` [${half} Half] ${min}: ${event}`);
 }
+
+//string
+
+const airline = 'TAP AIR';
+const plane = 'Boeing 787';
+
+console.log(plane[1]);
+
+console.log(airline.length);
+
+console.log(plane.length);
+
+console.log(plane.indexOf('o'));
+
+//slice method
+
+console.log(airline.slice(4, 6));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.indexOf(' ') + 1));
+
+const checkMiddleSeat = function (seat) {
+  //B and E are middle seat
+  const s = seat.slice(-1);
+  if (s == 'B' || s == 'E') {
+    console.log(`${seat} is middle seat`);
+  } else {
+    console.log(`${seat} is windowed seat`);
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('11A');
+checkMiddleSeat('11E');
+checkMiddleSeat('11F');
+
+console.log(new String('Maruf'));
+
+//fix capitalization in names
+
+const passenger = 'MaRuF';
+const passengerLower = passenger.toLocaleLowerCase();
+const passengerCorrect =
+  passengerLower[0].toLocaleUpperCase() + passengerLower.slice(1);
+
+console.log(passengerCorrect);
+
+//check/compare input email
+
+const email = 'marufsiddique71@gmail.com';
+const loginEmail = ' marUfsiddIque71@gmail.com \n';
+
+const lowerEmail = loginEmail.toLocaleLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+//ez version^^^^^
+
+const normalizedEmail = lowerEmail.toLocaleLowerCase().trim();
+console.log(normalizedEmail);
+
+//replacing
+
+const priceGB = '288,96€';
+const priceUS = priceGB.replace('€', '$').replace(',', '.');
+console.log(priceUS);
+
+const notice = 'Maruf is a lost man, Maruf cant do anything';
+console.log(notice.replace(/Maruf/g, 'Pipo'));
+// here >>> /..../ select strings to replace and g means global
+
+//booleans
+
+console.log(plane.includes('A320'));
+console.log(plane.includes('787'));
+
+// practise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLocaleLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('Warninggg !!!!!!');
+  } else {
+    console.log("He's good to go");
+  }
+};
+
+checkBaggage('I have a laptop, some Food and pocket Knife');
+checkBaggage('socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+//slit strings
+console.log('a+very+nice+string'.split('+'));
+
+// joining strings
+
+const firstName = 'Maruf',
+  lastName = 'Siddique';
+
+const greetName = ['Mr.', firstName, lastName].join(' ');
+console.log(greetName);
+
+//string padding
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+'));
+console.log(message.padStart(25, '+').padEnd(35, '+'));
+
+const maskCreditCardNumber = function (number) {
+  const str = String(number);
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCardNumber('4673198314693274'));
+console.log(maskCreditCardNumber(4673198314693274));
+console.log(maskCreditCardNumber(4673198314));
+
+//repeat
+const message2 = 'Bad weather...All Departures Delayed... ';
+console.log(message2.repeat(5));
