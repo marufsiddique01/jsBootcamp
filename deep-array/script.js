@@ -84,6 +84,15 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const eurToUsd = 1.1;
+
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+
+console.log(movements);
+console.log(movementsUSD);
+
 /////////////////////////////////////////////////
 // LECTURES
 
@@ -137,18 +146,21 @@ const checkDogs = function (dogsJulia, dogsKate) {
   const dogsJuliaCorrected = dogsJulia.slice();
   dogsJuliaCorrected.splice(0, 1);
   dogsJuliaCorrected.splice(-2);
-  console.log(dogsJuliaCorrected);
+  // console.log(dogsJuliaCorrected);
 
   const dogs = dogsJuliaCorrected.concat(dogsKate);
-  console.log(dogs);
+  // console.log(dogs);
 
   dogs.forEach(function (dog, i) {
     if (dog >= 3) {
-      console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`);
+      // console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`);
     } else {
-      console.log(`Dog number ${i + 1} is still a puppy`);
+      // console.log(`Dog number ${i + 1} is still a puppy`);
     }
   });
 };
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+// map / filter / reduce for data transformations
+
