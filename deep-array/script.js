@@ -163,4 +163,3 @@ const checkDogs = function (dogsJulia, dogsKate) {
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 
 // map / filter / reduce for data transformations
-
